@@ -1,0 +1,22 @@
+version: '3.2'
+services:
+  rock-external1:
+      image: datashield/rock-base:latest
+      hostname: rock-external1
+      environment:
+          - JAVA_OPTS=-Xms32m -Xmx512m -XX:+UseG1GC
+          - ROCK_USER_NAME=$ROCK_USER
+          - ROCK_USER_PASSWORD=$ROCK_PASS
+          - ROCK_OPAL_SERVER=192.168.1.147:7880
+          - ROCK_CLUSTER=default
+      expose:
+          - 8085
+      ports:
+          - "8086:8085"
+      volumes:
+          - rock-library1:/var/lib/rock/R/library
+
+
+
+volumes:
+    rock-library1:
