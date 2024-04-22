@@ -7,4 +7,4 @@ First set the variables in the setvars file to the desired values, then export t
 
 <code>. ./setvars</code>
 
-Then run <code>docker-compose up -d</code> first in the postgres folder (this will install a postgres database populated with an empty OMOP schema) and then in the opal folder.
+Then run <code>docker-compose up -d</code> first in the yml/postgres folder (this will install a postgres database populated with an empty OMOP schema) and then in the yml/opal folder.
