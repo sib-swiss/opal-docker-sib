@@ -1,6 +1,8 @@
 # SIB generic docker images for opal and postgresql
 
-The yml folder contains example docker-compose configuration for 1) the postgresql database and 2) the opal and rock servers.
+The yml folder contains example docker-compose configuration for 
+1) the postgresql database and
+2) the opal and rock servers.
 
 
 First set the variables in the setvars file to the desired values, then export them in the environment.
