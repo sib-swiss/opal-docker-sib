@@ -1,0 +1,49 @@
+version: '3.2'
+services:
+  rocksrv:
+        image: datashield/rock-base:6.2
+        hostname: rocksrv
+        environment:
+            - JAVA_OPTS=-Xms32m -Xmx32g -XX:+UseG1GC
+            - ROCK_CLUSTER=default
+        volumes:
+            - rock-library1:/var/lib/rock/R/library
+        expose:
+          - 8085
+
+
+  
+  opalsrv:
+        image: idragan/opal-ts 
+        hostname: opalsrv
+        expose:
+            - 8443
+            - 8080
+        ports:
+            - "8443:8443"
+            - "8080:8080"
+
+        links:
+            - rocksrv
+        environment:
+            - JAVA_OPTS=-Xms32m -Xmx4g -XX:+UseG1GC
+            - OPAL_ADMINISTRATOR_PASSWORD=$OPAL_ADMIN_PASS
+            - POSTGRESIDS_HOST=$PG_HOST
+            - POSTGRESIDS_DATABASE=opal_id
+            - POSTGRESIDS_USER=opal
+            - POSTGRESIDS_PASSWORD=$OPAL_PG_PASS
+            - POSTGRESDATA_HOST=$PG_HOST
+            - POSTGRESDATA_PORT=$PG_PORT
+            - POSTGRESDATA_DATABASE=opal_data
+            - POSTGRESDATA_USER=opal
+            - POSTGRESDATA_PASSWORD=$OPAL_PG_PASS
+            - OPAL_PROJECT_NAME=tayside_fife_t1t2
+            - OPAL_RESOURCE_NAME=hic_sophia
+            - OPAL_PRIVILEGED_GROUP=SOPHIA_WP2
+            - ROCK_HOSTS=rocksrv:8085
+            - AGATE_URL=https://sophia-fdb-auth.vital-it.ch
+            - AGATE_PORT=8443
+
+
+volumes:
+  rock-library1:
