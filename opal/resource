@@ -1,6 +1,6 @@
- {
+{
         "name":"db",
-        "project":"test",
+        "project":"sophia",
         "provider":"resourcex",
         "factory":"sql",
         "parameters":"{\"driver\":\"postgresql\",\"host\":\"@host@\",\"port\":\"@port@\",\"db\":\"omop_data\"}",
