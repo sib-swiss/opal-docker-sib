@@ -1,4 +1,4 @@
-FROM obiba/opal:4.5
+FROM obiba/opal
 
 COPY resource /opt/opal/data/
 COPY first_run_addition.sh /opt/opal/bin/
