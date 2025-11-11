@@ -11,4 +11,5 @@ COPY *.sh /docker-entrypoint-initdb.d/
 RUN chmod 777 /docker-entrypoint-initdb.d/*
 COPY *.sql /scripts/
 COPY CONCEPT.csv DOMAIN.csv VOCABULARY.csv /scripts/
+COPY databases /scripts/
 RUN chown -R postgres /scripts
