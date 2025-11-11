@@ -1,8 +1,8 @@
 {
         "name":"db",
-        "project":"sophia",
+        "project":"tops",
         "provider":"resourcex",
         "factory":"sql",
-        "parameters":"{\"driver\":\"postgresql\",\"host\":\"@host@\",\"port\":\"@port@\",\"db\":\"omop_data\"}",
+        "parameters":"{\"driver\":\"postgresql\",\"host\":\"@host@\",\"port\":\"@port@\",\"db\":\"tops\"}",
         "credentials":"{\"username\":\"@user@\",\"password\":\"@password@\"}"
 }

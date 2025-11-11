@@ -14,7 +14,7 @@ services:
 
   
   opalsrv:
-        image: idragan/opal-ts 
+        image: idragan/opal-mass 
         hostname: opalsrv
         expose:
             - 8443
@@ -37,8 +37,8 @@ services:
             - POSTGRESDATA_DATABASE=opal_data
             - POSTGRESDATA_USER=opal
             - POSTGRESDATA_PASSWORD=$OPAL_PG_PASS
-            - OPAL_PROJECT_NAME=tayside_fife_t1t2
-            - OPAL_RESOURCE_NAME=hic_sophia
+            - OPAL_PROJECT_NAME=sophia
+            - OPAL_RESOURCE_NAME=db
             - OPAL_PRIVILEGED_GROUP=SOPHIA_WP2
             - ROCK_HOSTS=rocksrv:8085
             - AGATE_URL=https://sophia-fdb-auth.vital-it.ch:8443
