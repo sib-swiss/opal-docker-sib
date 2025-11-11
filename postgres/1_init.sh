@@ -15,8 +15,8 @@ psql -v ON_ERROR_STOP=1 --username postgres --dbname postgres <<-EOSQL
     grant connect on database opal_data to opal;
     grant create on database opal_data to opal;
 
-    create database obelisk;
-    alter database obelisk owner to opalroot;
-    grant connect on database obelisk to opal;
-    grant create on database obelisk to opal;
+    create database seeddb;
+    alter database seeddb owner to opalroot;
+    grant connect on database seeddb to opal;
+    grant create on database seeddb to opal;
 EOSQL
